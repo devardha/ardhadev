@@ -1,7 +1,7 @@
 const Navbar = () => {
 	return (
-		<nav className="fixed w-full top-0">
-			<div className="container mx-auto flex justify-between py-5">
+		<nav className="fixed w-full top-0 h-20 text-white flex items-center">
+			<div className="container max-w-7xl mx-auto flex justify-between items-center py-5">
 				<div className="flex items-center relative z-10">
 					{data.map((item, index) => (
 						<div key={index} className="mr-6">
