@@ -1,18 +1,21 @@
+import { useRouter } from "next/router";
+
 const Navbar = () => {
+	const asPath = useRouter().asPath;
 	return (
-		<nav className="fixed w-full top-0 h-20 text-white flex items-center">
-			<div className="container max-w-7xl mx-auto flex justify-between items-center py-5">
+		<nav className="fixed w-full top-0 text-black flex flex-col justify-between items-center">
+			<div className="container max-w-4xl mx-auto flex justify-between items-center py-8">
 				<div className="flex items-center relative z-10">
 					{data.map((item, index) => (
-						<div key={index} className="mr-6">
+						<div
+							key={index}
+							className={`mr-6 cursor-pointer ${
+								asPath === item.path ? "" : "text-neutral-500"
+							}`}
+						>
 							{item.label}
 						</div>
 					))}
-				</div>
-				<div className="absolute flex justify-center left-0 right-0 w-full">
-					<div className="bg-[#33D49D] px-3 py-2 font-semibold">
-						ardha.dev
-					</div>
 				</div>
 			</div>
 		</nav>
@@ -21,16 +24,24 @@ const Navbar = () => {
 
 const data = [
 	{
+		label: "Home",
+		path: "/",
+	},
+	{
 		label: "Blog",
+		path: "/blogs",
 	},
 	{
 		label: "Works",
+		path: "/works",
 	},
 	{
 		label: "About",
+		path: "/about",
 	},
 	{
 		label: "Gears",
+		path: "/gears",
 	},
 ];
 
