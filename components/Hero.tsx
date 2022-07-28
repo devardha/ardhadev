@@ -3,7 +3,7 @@ const Hero = () => {
 	const age = new Date().getFullYear() - birthyear;
 	return (
 		<section className="w-full pt-20">
-			<div className="container mx-auto pt-32 pb-32 max-w-4xl">
+			<div className="container mx-auto py-24 max-w-5xl">
 				<div>
 					<h1 className="text-5xl font-bold mb-5">Ardha Yudhatama</h1>
 					<h2 className="mb-5 text-xl font-medium">
