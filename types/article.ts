@@ -1,3 +1,4 @@
+import { Author } from './author';
 import { Image } from './image';
 
 export interface Category {
@@ -11,17 +12,30 @@ export interface Category {
 		publishedAt: string;
 	}
 }
+
+export interface Block {
+	id: string;
+	__component: string;
+	body: string;
+}
 export interface Article {
 	id: string;
 	attributes: {
 		title: string;
 		description: string;
 		slug: string;
+		createdAt: string;
+		updatedAt: string;
+		publishedAt: string;
 		cover: {
 			data: Image
 		};
 		categories: {
 			data: Category[]
+		};
+		blocks: Block[]
+		author: {
+			data: Author;
 		}
 	}
 }

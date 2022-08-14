@@ -5,7 +5,7 @@ const Navbar = () => {
 	const asPath = useRouter().asPath;
 	return (
 		<nav
-			className="fixed top-0 flex flex-col items-center justify-between w-full text-black border-b border-gray-200"
+			className="fixed top-0 z-10 flex flex-col items-center justify-between w-full text-black border-b border-gray-200"
 			style={{
 				background: "rgba(255,255,255,0.85)",
 				backdropFilter: "saturate(180%) blur(20px)",
