@@ -1,11 +1,11 @@
-import Markdown from "./Markdown";
+import RichText from "./Blocks/RichText";
 
 const Blocks = ({ blocks }: any) => {
 	return (
 		<div>
 			{blocks.map((block: any) => {
 				if (block.__component === "shared.rich-text") {
-					return <Markdown key={block.id} content={block.body} />;
+					return <RichText key={block.id} content={block.body} />;
 				}
 			})}
 		</div>

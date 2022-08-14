@@ -1,7 +1,6 @@
 import type { NextPage, GetStaticPropsContext } from "next";
-import Hero from "../../components/Hero";
 import Layout from "../../components/Layout";
-import Posts from "../../components/Posts";
+import Blog from "../../components/Blog";
 import axios from "axios";
 import { Article } from "../../types/article";
 
@@ -12,7 +11,7 @@ interface HomePageProps {
 const BlogsPage: NextPage<HomePageProps> = ({ articles }) => {
 	return (
 		<Layout>
-			<Posts articles={articles} />
+			<Blog articles={articles} />
 		</Layout>
 	);
 };

@@ -1,8 +1,8 @@
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import styles from "../lib/prism/styles";
+import styles from "../../lib/prism/styles";
 
-export default function Markdown({ content }: any) {
+export default function RichText({ content }: any) {
 	return (
 		<>
 			<ReactMarkdown
