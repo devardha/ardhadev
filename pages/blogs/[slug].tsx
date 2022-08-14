@@ -6,6 +6,7 @@ import { Article } from "../../types/article";
 import { format } from "date-fns";
 import readingTime from "reading-time";
 import Markdown from "../../components/Markdown";
+import Blocks from "../../components/Blocks";
 
 interface HomePageProps {
 	article: Article;
@@ -62,11 +63,9 @@ const BlogPage: NextPage<HomePageProps> = ({ article }) => {
 					}
 					alt={article.attributes.title}
 				/>
-				<article className="mt-10">
-					{article.attributes.blocks.map((block) => (
-						<Markdown key={block.id} content={block.body} />
-					))}
-				</article>
+				<div className="mt-10">
+					<Blocks blocks={article.attributes.blocks} />
+				</div>
 			</div>
 		</Layout>
 	);
