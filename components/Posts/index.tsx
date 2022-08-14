@@ -1,16 +1,26 @@
+import { Article } from "../../types/article";
 import Post from "./Post";
 
-const Posts = () => {
+interface Props {
+	articles: Article[];
+}
+
+const Posts = ({ articles }: Props) => {
 	return (
 		<section className="w-full">
-			<div className="container mx-auto max-w-5xl">
-				<h2 className="font-bold text-4xl mb-8">Blog Posts</h2>
-				<div className="grid grid-cols-3 gap-6">
-					{data.map((item, index) => (
+			<div className="container max-w-5xl mx-auto">
+				<h2 className="mb-4 text-4xl font-bold">Blogs</h2>
+				<div className="grid grid-cols-3 gap-6 mt-8">
+					{articles.map((item, index) => (
 						<Post
 							key={index}
-							title={item.title}
-							image={item.image}
+							title={item.attributes.title}
+							image={
+								item.attributes.cover.data.attributes.formats
+									.small.url
+							}
+							categories={item.attributes.categories.data}
+							description={item.attributes.description}
 						/>
 					))}
 				</div>

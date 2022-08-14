@@ -2,10 +2,10 @@ const Hero = () => {
 	const birthyear = 2001;
 	const age = new Date().getFullYear() - birthyear;
 	return (
-		<section className="w-full pt-20">
-			<div className="container mx-auto py-24 max-w-5xl">
+		<section className="w-full">
+			<div className="container max-w-5xl py-24 mx-auto">
 				<div>
-					<h1 className="text-5xl font-bold mb-5">Ardha Yudhatama</h1>
+					<h1 className="mb-5 text-5xl font-bold">Ardha Yudhatama</h1>
 					<h2 className="mb-5 text-xl font-medium">
 						Developer, Writer, Dreamer
 					</h2>
