@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 
-const About = () => {
+const Works = () => {
 	return (
 		<Layout>
 			<div></div>
@@ -8,4 +8,4 @@ const About = () => {
 	);
 };
 
-export default About;
+export default Works;

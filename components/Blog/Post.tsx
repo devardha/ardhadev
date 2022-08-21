@@ -1,6 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
-
 import Link from "next/link";
+import Image from "next/image";
 import { Category } from "../../types/article";
 
 interface PostType {
@@ -16,11 +15,12 @@ const Post = ({ title, image, categories, description, slug }: PostType) => {
 		<Link href={`/blogs/${slug}`}>
 			<a className="block w-full mb-2">
 				<div>
-					<div className="h-48 mb-3 bg-neutral-200">
-						<img
-							className="object-cover object-center w-full h-full"
+					<div className="relative w-full h-48 mb-3 bg-neutral-200">
+						<Image
 							src={image}
-							alt="thumbnail"
+							alt={title}
+							layout="fill"
+							objectFit="cover"
 						/>
 					</div>
 					<div className="flex gap-1 mb-3">

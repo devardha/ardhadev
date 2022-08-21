@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { FiSearch } from "react-icons/fi";
 
 const Navbar = () => {
 	const asPath = useRouter().asPath;
@@ -16,9 +17,9 @@ const Navbar = () => {
 					{data.map((item, index) => (
 						<Link href={item.path} key={index}>
 							<div
-								className={`mr-6 cursor-pointer ${
+								className={`rounded cursor-pointer px-4 py-1 hover:bg-neutral-200 hover:bg-opacity-50 ${
 									asPath === item.path
-										? "font-medium"
+										? "font-medium text-blue-600"
 										: "text-neutral-500"
 								}`}
 							>
@@ -27,7 +28,14 @@ const Navbar = () => {
 						</Link>
 					))}
 				</div>
-				<div className="px-3 py-1 text-white bg-black">devardha</div>
+				<div className="absolute left-0 right-0 flex items-center justify-center">
+					<div className="px-3 py-1 text-white bg-black">
+						devardha
+					</div>
+				</div>
+				<div>
+					<FiSearch className="text-2xl" />
+				</div>
 			</div>
 		</nav>
 	);
@@ -37,10 +45,6 @@ const data = [
 	{
 		label: "Home",
 		path: "/",
-	},
-	{
-		label: "Blog",
-		path: "/blogs",
 	},
 	{
 		label: "Works",

@@ -4,15 +4,20 @@ import axios from "axios";
 import { Article } from "../../types/article";
 import Blocks from "../../components/Blocks";
 import BlogHeader from "../../components/Blog/BlogHeader";
+import ProgressBar from "../../components/ProgressBar";
+import { MutableRefObject, useRef } from "react";
 
 interface HomePageProps {
 	article: Article;
 }
 
 const BlogPage: NextPage<HomePageProps> = ({ article }) => {
+	const ref: MutableRefObject<null> | any = useRef();
+
 	return (
 		<Layout title={article.attributes.title}>
-			<div className="container max-w-screen-md mx-auto">
+			<ProgressBar element={ref} />
+			<div className="container max-w-screen-md mx-auto" ref={ref}>
 				<BlogHeader article={article} />
 				<div className="mt-10">
 					<Blocks blocks={article.attributes.blocks} />
