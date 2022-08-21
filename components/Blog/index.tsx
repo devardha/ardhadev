@@ -9,8 +9,7 @@ const Posts = ({ articles }: Props) => {
 	return (
 		<section className="w-full">
 			<div className="container max-w-5xl mx-auto">
-				<h2 className="mb-4 text-4xl font-bold">Blogs</h2>
-				<div className="grid grid-cols-3 gap-6 mt-8">
+				<div className="grid grid-cols-3 gap-6">
 					{articles.map((item, index) => (
 						<Post
 							key={index}

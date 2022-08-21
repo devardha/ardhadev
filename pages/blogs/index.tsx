@@ -18,7 +18,8 @@ const BlogsPage: NextPage<HomePageProps> = ({ articles }) => {
 
 export async function getStaticProps(context: GetStaticPropsContext) {
 	const { data } = await axios.get(
-		process.env.STRAPI_BASE_URL + "/api/articles?populate=cover,categories"
+		process.env.STRAPI_BASE_URL +
+			"/api/articles?populate=cover,categories&sort[0]=publishedAt%3Adesc"
 	);
 
 	return {
