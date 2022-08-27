@@ -28,6 +28,7 @@ const BlogHeader = ({ article }: Props) => {
 									.data.attributes.formats.thumbnail.url
 							}
 							alt="author"
+							loading="lazy"
 						/>
 					</div>
 					<div className="flex flex-col ml-4 text-xs uppercase lg:text-sm">
@@ -58,6 +59,7 @@ const BlogHeader = ({ article }: Props) => {
 							.url
 					}
 					alt={article.attributes.title}
+					priority
 				/>
 			</div>
 		</div>
