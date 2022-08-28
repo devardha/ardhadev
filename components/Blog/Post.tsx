@@ -15,7 +15,7 @@ const Post = ({ title, image, categories, description, slug }: PostType) => {
 		<Link href={`/blogs/${slug}`}>
 			<a className="block w-full mb-2">
 				<div>
-					<div className="relative w-full h-48 mb-3 bg-neutral-200">
+					<div className="relative w-full h-56 mb-3 md:h-48 bg-neutral-200">
 						<Image
 							src={image}
 							alt={title}

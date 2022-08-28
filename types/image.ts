@@ -13,6 +13,7 @@ export interface Image {
 	id: string;
 	attributes: {
 		url: string;
+		caption: string;
 		formats: {
 			large: ImageFormat;
 			medium: ImageFormat;

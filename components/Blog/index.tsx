@@ -8,8 +8,8 @@ interface Props {
 const Posts = ({ articles }: Props) => {
 	return (
 		<section className="w-full">
-			<div className="container max-w-5xl mx-auto">
-				<div className="grid grid-cols-3 gap-6">
+			<div className="container max-w-5xl px-6 mx-auto md:px-0">
+				<div className="grid grid-cols-1 gap-6 md:grid-cols-3">
 					{articles.map((item, index) => (
 						<Post
 							key={index}

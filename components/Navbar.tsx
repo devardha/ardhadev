@@ -6,7 +6,7 @@ const Navbar = () => {
 	const asPath = useRouter().asPath;
 	return (
 		<nav
-			className="fixed top-0 z-10 flex flex-col items-center justify-between w-full text-black border-b border-gray-200"
+			className="fixed top-0 z-10 flex flex-col items-center justify-between w-full px-6 text-black border-b border-gray-200 md:px-0"
 			style={{
 				background: "rgba(255,255,255,0.85)",
 				backdropFilter: "saturate(180%) blur(20px)",
@@ -17,7 +17,7 @@ const Navbar = () => {
 					{data.map((item, index) => (
 						<Link href={item.path} key={index}>
 							<a
-								className={`rounded cursor-pointer px-4 py-1 hover:bg-neutral-200 hover:bg-opacity-50 ${
+								className={`rounded cursor-pointer md:px-4 mr-5 md:mr-0 py-1 hover:bg-neutral-200 hover:bg-opacity-50 ${
 									asPath === item.path
 										? "font-medium"
 										: "text-neutral-500"
@@ -28,7 +28,7 @@ const Navbar = () => {
 						</Link>
 					))}
 				</div>
-				<div className="absolute left-0 right-0 flex items-center justify-center">
+				<div className="absolute left-0 right-0 items-center justify-center hidden md:flex">
 					<div className="px-3 py-1 text-white bg-black">
 						devardha
 					</div>

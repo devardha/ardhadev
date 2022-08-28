@@ -8,13 +8,10 @@ const About = () => {
 		<Layout>
 			<Header
 				title="Gears"
-				description="Sed ut perspiciatis unde omnis iste natus error sit
-					voluptatem accusantium doloremque laudantium, totam rem
-					aperiam, eaque ipsa quae ab illo inventore veritatis et
-					quasi architecto beatae vitae dicta sunt explicabo"
+				description="Here's what gear I'm currently using for programming."
 			/>
 			<section className="w-full">
-				<div className="container max-w-5xl mx-auto mt-16 relative w-full h-[682px]">
+				<div className="container max-w-5xl mx-auto mt-16 relative w-full h-[360px] md:h-[682px]">
 					<Image
 						src="/images/setup.jpg"
 						alt="Setup"

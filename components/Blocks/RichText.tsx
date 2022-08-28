@@ -12,7 +12,6 @@ export default function RichText({ content }: any) {
 				components={{
 					p: (props) => {
 						const { children } = props;
-						console.log(children);
 
 						const code = children.join("").slice(0, 2);
 

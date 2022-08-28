@@ -3,8 +3,8 @@ import Gear from "./Gear";
 const Gears = () => {
 	return (
 		<section className="w-full">
-			<div className="container mx-auto max-w-5xl mt-16">
-				<div className="grid grid-cols-3 gap-6">
+			<div className="container max-w-5xl px-6 mx-auto mt-16 md:px-0">
+				<div className="grid grid-cols-2 gap-4 md:gap-6 md:grid-cols-3">
 					{data.map((item, index) => (
 						<Gear
 							key={index}
@@ -58,7 +58,7 @@ const data = [
 	},
 	{
 		image: "/images/canon-eos-rp.png",
-		title: "Canon EOS RP",
+		title: "Canon EOS RP (Body)",
 		brand: "Canon",
 		links: [
 			{
@@ -80,7 +80,7 @@ const data = [
 	},
 	{
 		image: "/images/lg-29wl500.png",
-		title: "LG 29WL500",
+		title: "LG 29WL500 Ultrawide",
 		brand: "LG",
 		links: [
 			{
@@ -115,6 +115,17 @@ const data = [
 		image: "/images/hyperx-solocast.png",
 		title: "HyperX Solocast",
 		brand: "HyperX",
+		links: [
+			{
+				store: "Tokopedia",
+				url: "",
+			},
+		],
+	},
+	{
+		image: "/images/logitech-z120.png",
+		title: "Logitech Z120",
+		brand: "Logitech",
 		links: [
 			{
 				store: "Tokopedia",

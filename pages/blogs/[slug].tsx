@@ -19,7 +19,7 @@ const BlogPage: NextPage<HomePageProps> = ({ article }) => {
 			<ProgressBar element={ref} />
 			<div className="container max-w-screen-md mx-auto" ref={ref}>
 				<BlogHeader article={article} />
-				<div className="mt-10">
+				<div className="px-6 mt-4 md:px-0">
 					<Blocks blocks={article.attributes.blocks} />
 				</div>
 			</div>
