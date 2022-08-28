@@ -21,16 +21,6 @@ const Footer = () => {
 						</ul>
 					</div>
 				))}
-				<Link href="https://www.buymeacoffee.com/devardha">
-					<a>
-						<Image
-							src="/images/buy-me-a-coffe.png"
-							alt="Buy Me A Coffee"
-							height={60}
-							width={217}
-						/>
-					</a>
-				</Link>
 			</div>
 		</footer>
 	);
