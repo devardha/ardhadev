@@ -33,7 +33,6 @@ export default function RichText({ content }: any) {
 									{...props}
 									className={`callout ${getClassName(code)}`}
 								>
-									<b>Note: </b>
 									{children.map((item) => {
 										if (typeof item === "string") {
 											return item.replace("!>", "");
@@ -71,6 +70,7 @@ export default function RichText({ content }: any) {
 						const meta = node?.data?.meta;
 
 						let title;
+						let isTerminal = false;
 
 						if (meta) {
 							const titleMatches = meta.match(/title="(.*?)"/);
@@ -78,8 +78,14 @@ export default function RichText({ content }: any) {
 							if (titleMatches) title = titleMatches[1];
 						}
 
-						const match =
+						const language =
 							/language-(\w+)/.exec(className || "") || [];
+
+						if (language[0] === "language-bash") {
+							isTerminal = true;
+						}
+
+						console.log(language[0]);
 
 						return !inline ? (
 							<>
@@ -88,7 +94,7 @@ export default function RichText({ content }: any) {
 								)}
 								<SyntaxHighlighter
 									style={styles}
-									language={match[1]}
+									language={language[1]}
 									wrapLines
 									PreTag="div"
 									{...props}
@@ -125,9 +131,13 @@ export default function RichText({ content }: any) {
                         background-color: #d4efee;
                         color: #005955;
                     }
-                    .linenumber{
-                        display:none !important;
-                    }
+
+					.language-bash::before{
+						content: "$";
+						display: inline-block;
+						margin-right: 10px;
+						color: #b7b7b7;
+					}
 
                     .code-label{
                         background-color: #e5e5e5;
@@ -154,6 +164,7 @@ export default function RichText({ content }: any) {
                         list-style: disc;
                         padding-left: 2.5rem;
                         margin-bottom: 1.7rem;
+						overflow-wrap: break-word;
                     }
                     .content ul li {
                         margin-bottom: 0.8rem;
