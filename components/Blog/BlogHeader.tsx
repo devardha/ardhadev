@@ -18,7 +18,7 @@ const BlogHeader = ({ article }: Props) => {
 					{article.attributes.description}
 				</p>
 				<div className="flex items-center mt-10">
-					<div className="relative w-8 h-8 overflow-hidden rounded-full lg:w-10 lg:h-10 bg-whitesmoke">
+					<div className="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full lg:w-10 lg:h-10">
 						<Image
 							objectFit="cover"
 							sizes="100%"
@@ -49,7 +49,7 @@ const BlogHeader = ({ article }: Props) => {
 					</div>
 				</div>
 			</div>
-			<div className="relative w-full h-[512px] overflow-hidden bg-whitesmoke">
+			<div className="relative w-full h-[512px] overflow-hidden bg-gray-100">
 				<Image
 					objectFit="cover"
 					sizes="100%"

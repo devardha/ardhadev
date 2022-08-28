@@ -16,15 +16,15 @@ const Navbar = () => {
 				<div className="relative z-10 flex items-center">
 					{data.map((item, index) => (
 						<Link href={item.path} key={index}>
-							<div
+							<a
 								className={`rounded cursor-pointer px-4 py-1 hover:bg-neutral-200 hover:bg-opacity-50 ${
 									asPath === item.path
-										? "font-medium text-blue-600"
+										? "font-medium"
 										: "text-neutral-500"
 								}`}
 							>
 								{item.label}
-							</div>
+							</a>
 						</Link>
 					))}
 				</div>
@@ -48,7 +48,7 @@ const data = [
 	},
 	{
 		label: "Works",
-		path: "/works",
+		path: "https://github.com/devardha",
 	},
 	{
 		label: "About",

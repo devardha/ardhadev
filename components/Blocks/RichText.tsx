@@ -10,6 +10,44 @@ export default function RichText({ content }: any) {
 			<ReactMarkdown
 				className="content"
 				components={{
+					p: (props) => {
+						const { children } = props;
+						console.log(children);
+
+						const code = children.join("").slice(0, 2);
+
+						const getClassName = (code: string) => {
+							switch (code) {
+								case "!>":
+									return "info";
+								case "?>":
+									return "caution";
+								case "x>":
+									return "danger";
+								default:
+									return;
+							}
+						};
+						if (code === "!>" || code === "?>" || code === "x>") {
+							return (
+								<p
+									{...props}
+									className={`callout ${getClassName(code)}`}
+								>
+									<b>Note: </b>
+									{children.map((item) => {
+										if (typeof item === "string") {
+											return item.replace("!>", "");
+										}
+
+										return item;
+									})}
+								</p>
+							);
+						}
+
+						return <p>{children}</p>;
+					},
 					h2: ({ children, ...props }) => {
 						const heading: any = children[0] || "";
 						const slug = slugify(heading, { lower: true });
@@ -36,8 +74,9 @@ export default function RichText({ content }: any) {
 						let title;
 
 						if (meta) {
-							const matches = meta.match(/title="(.*?)"/);
-							title = matches[1];
+							const titleMatches = meta.match(/title="(.*?)"/);
+
+							if (titleMatches) title = titleMatches[1];
 						}
 
 						const match =
@@ -71,6 +110,26 @@ export default function RichText({ content }: any) {
 			<style
 				dangerouslySetInnerHTML={{
 					__html: `
+                    .callout{
+                        background-color: #c8dfff;
+                        border-radius: 3px;
+                        color: #002c9b;
+                        display: block;
+                        font-size: 15px;
+                        line-height: 1.5em;
+                        margin: 0 0 1.5em;
+                        padding: 1em 1.25em;
+                        position: relative;
+                        z-index: 0;
+                    }
+                    .info{
+                        background-color: #d4efee;
+                        color: #005955;
+                    }
+                    .linenumber{
+                        display:none !important;
+                    }
+
                     .code-label{
                         background-color: #e5e5e5;
                         border-radius: 3px 3px 0 0;
@@ -120,6 +179,9 @@ export default function RichText({ content }: any) {
                     }
                     .content a {
                         color: #60a5fa;
+                    }
+                    pre div::-webkit-scrollbar { 
+                        display: none;  /* Safari and Chrome */
                     }
                 `,
 				}}
