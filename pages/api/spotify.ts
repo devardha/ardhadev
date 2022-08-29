@@ -44,7 +44,7 @@ export default async function handler(
   const response = await getNowPlaying();
 
     if (response.status === 204 || response.status > 400) {
-        return res.status(200).json({ isPlaying: false });
+        return res.status(200).json({ data: { isPlaying: false } });
     }
 
     const song = await response.json();
