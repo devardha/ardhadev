@@ -83,20 +83,38 @@ export default function RichText({ content }: any) {
 
 						if (language[0] === "language-bash") {
 							isTerminal = true;
-						}
 
-						console.log(language[0]);
+							if (title === "Output") {
+								props["data-teminal-type"] = "output";
+							}
+						}
 
 						return !inline ? (
 							<>
 								{title && (
-									<div className="code-label">{title}</div>
+									<div className="flex justify-between code-label">
+										<span>{title}</span>
+										{title !== "Output" && (
+											<span
+												className="cursor-pointer"
+												onClick={() => {
+													navigator.clipboard.writeText(
+														String(
+															children
+														).replace(/\n$/, "")
+													);
+												}}
+											>
+												Copy
+											</span>
+										)}
+									</div>
 								)}
 								<SyntaxHighlighter
 									style={styles}
 									language={language[1]}
 									wrapLines
-									PreTag="div"
+									PreTag={"div"}
 									{...props}
 								>
 									{String(children).replace(/\n$/, "")}
@@ -139,10 +157,14 @@ export default function RichText({ content }: any) {
 						color: #b7b7b7;
 					}
 
+					[data-teminal-type='output'] .language-bash::before {
+						display: none;
+					  }
+
                     .code-label{
                         background-color: #e5e5e5;
                         border-radius: 3px 3px 0 0;
-                        color: #323232;
+                        color: #292929;
                         font-size: 14px;
                         padding: 8px 15px;
                         margin-bottom:-1rem;
@@ -172,14 +194,14 @@ export default function RichText({ content }: any) {
                     .content h2 {
                         margin-top: 30px;
                         margin-bottom: 10px;
-                        color: #323232;
+                        color: #292929;
                         font-size: 26px;
                         font-weight: 700;
                         letter-spacing: -0.5px;
                     }
                     .content h3 {
                         margin-top: 16px;
-                        color: #323232;
+                        color: #292929;
                         font-size: 20px;
                         font-weight: 700;
                         letter-spacing: -0.5px;

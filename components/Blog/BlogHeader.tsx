@@ -13,7 +13,7 @@ const BlogHeader = ({ article }: Props) => {
 	return (
 		<div>
 			<div className="px-6 mb-10 md:px-0">
-				<h1 className="mb-5 text-3xl font-bold md:text-5xl">
+				<h1 className="mb-5 text-3xl font-bold leading-tight md:text-5xl">
 					{article.attributes.title}
 				</h1>
 				<p className="text-lg text-gray-400 md:text-xl">
