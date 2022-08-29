@@ -9,7 +9,6 @@ interface Props {
 }
 
 const BlogHeader = ({ article }: Props) => {
-	console.log(article.attributes.cover.data);
 	return (
 		<div>
 			<div className="px-6 mb-10 md:px-0">

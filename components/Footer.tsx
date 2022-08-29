@@ -9,10 +9,6 @@ const Footer = () => {
 		refreshInterval: 60000,
 	});
 
-	if (data) {
-		console.log(data);
-	}
-
 	return (
 		<footer className="container max-w-5xl px-6 pt-32 pb-20 mx-auto md:pb-40 md:px-0">
 			<div className="grid items-start w-full grid-cols-2 md:grid-cols-4">
@@ -36,7 +32,7 @@ const Footer = () => {
 					<div className="flex-shrink-0 w-10 h-10 overflow-hidden rounded">
 						<FaSpotify
 							className={`text-4xl ${
-								data && data.isPlaying
+								data && data.data.isPlaying
 									? "text-green-400"
 									: "text-neutral-300"
 							}`}
@@ -44,12 +40,12 @@ const Footer = () => {
 					</div>
 					<div className="pl-4">
 						<div className="font-medium">
-							{data && data.isPlaying
+							{data && data.data.isPlaying
 								? data.data.title
 								: "Not Playing"}
 						</div>
 						<div className="text-sm">
-							{data.data && data.isPlaying
+							{data && data.data.isPlaying
 								? data.data.artist
 								: "Spotify"}
 						</div>
