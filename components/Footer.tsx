@@ -10,7 +10,7 @@ const Footer = () => {
 	});
 
 	if (data) {
-		console.log(data.data);
+		console.log(data);
 	}
 
 	return (
@@ -36,16 +36,22 @@ const Footer = () => {
 					<div className="flex-shrink-0 w-10 h-10 overflow-hidden rounded">
 						<FaSpotify
 							className={`text-4xl ${
-								data ? "text-green-400" : "text-neutral-300"
+								data && data.isPlaying
+									? "text-green-400"
+									: "text-neutral-300"
 							}`}
 						/>
 					</div>
 					<div className="pl-4">
 						<div className="font-medium">
-							{data ? data.data.title : "Not Playing"}
+							{data && data.isPlaying
+								? data.data.title
+								: "Not Playing"}
 						</div>
 						<div className="text-sm">
-							{data ? data.data.artist : "Spotify"}
+							{data.data && data.isPlaying
+								? data.data.artist
+								: "Spotify"}
 						</div>
 					</div>
 				</div>
