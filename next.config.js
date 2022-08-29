@@ -2,7 +2,7 @@
 const nextConfig = {
 	reactStrictMode: true,
 	images: {
-		domains: ["ardhadev.s3.ap-southeast-1.amazonaws.com"],
+		domains: ["ardhadev.s3.ap-southeast-1.amazonaws.com", "i.scdn.co"],
 	},
 	async redirects() {
 		return [
