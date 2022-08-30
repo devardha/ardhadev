@@ -15,7 +15,7 @@ const Layout = ({ children, title }: Props) => {
 				<title>{title ? title : "Ardha Yudhatama"}</title>
 			</Head>
 			<Navbar />
-			<main className="pt-10 mt-24">{children}</main>
+			<main className="pt-10 mt-24 min-h-[45vh]">{children}</main>
 			<Footer />
 		</>
 	);

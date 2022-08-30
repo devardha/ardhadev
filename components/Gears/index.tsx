@@ -41,7 +41,7 @@ const data = [
 		links: [
 			{
 				store: "Tokopedia",
-				url: "https://tokopedia.link/T6eFUrDJ1rb",
+				url: "https://tokopedia.link/kCmKu4MBUsb",
 			},
 		],
 	},
@@ -118,7 +118,7 @@ const data = [
 		links: [
 			{
 				store: "Tokopedia",
-				url: "",
+				url: "https://tokopedia.link/dWsWhQvBUsb",
 			},
 		],
 	},
@@ -129,7 +129,7 @@ const data = [
 		links: [
 			{
 				store: "Tokopedia",
-				url: "",
+				url: "https://tokopedia.link/kVX6bZHBUsb",
 			},
 		],
 	},
