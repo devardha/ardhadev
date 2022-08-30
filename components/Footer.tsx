@@ -5,7 +5,7 @@ import { FaSpotify } from "react-icons/fa";
 
 const Footer = () => {
 	const fetcher = (url: string) => fetch(url).then((res) => res.json());
-	const { data } = useSWR("/api/spotify", fetcher, {
+	const { data } = useSWR("/api/spotify/now-playing", fetcher, {
 		refreshInterval: 60000,
 	});
 
