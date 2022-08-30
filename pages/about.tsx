@@ -23,7 +23,7 @@ const About = ({ topTracks }: AboutPage) => {
 		<Layout>
 			<Header
 				title="About"
-				description="Hey, I’m Ardha 👋. I'm a developer from Indonesia. I work at Viska Vef ehf as a Full Stack Web Developer. I usually work with React and Node.js. And yes, I love javascript so much! Javascript has become my third language after Indonesian and English. I'm also interested in learning other programming languages such as Python and Go."
+				description="Hey, I’m Ardha 👋. I'm a developer from Indonesia. I work at [Viska Vef](https://www.linkedin.com/company/viskavef/) as a Full Stack Web Developer. I usually work with React and Node.js. And yes, I love Typescript so much! Typescript has become my third language after Indonesian and English. I'm also interested in learning other programming languages such as Python and Go."
 			/>
 			<div className="container max-w-5xl px-6 mx-auto mt-20 md:px-0">
 				<h2 className="mb-4 text-2xl font-bold md:text-3xl">
@@ -112,24 +112,30 @@ const About = ({ topTracks }: AboutPage) => {
 				</p>
 				<div className="grid grid-cols-1 gap-5 mt-10 sm:grid-cols-3">
 					{topTracks.map((track: TopTrack, index: number) => (
-						<div key={index} className="flex">
-							<div className="relative h-[100px] w-[100px] mr-5">
-								<Image
-									src={track.image.url}
-									width={100}
-									height={100}
-									alt={track.name}
-								/>
-							</div>
-							<div>
-								<div className="font-bold">{track.name}</div>
-								<div>
-									{track.artist?.map((artist, index) => {
-										return <div key={index}>{artist}</div>;
-									})}
+						<Link key={index} href={track.url}>
+							<a className="flex">
+								<div className="relative h-[100px] w-[100px] mr-5">
+									<Image
+										src={track.image.url}
+										width={100}
+										height={100}
+										alt={track.name}
+									/>
 								</div>
-							</div>
-						</div>
+								<div>
+									<div className="font-bold">
+										{track.name}
+									</div>
+									<div>
+										{track.artist?.map((artist, index) => {
+											return (
+												<div key={index}>{artist}</div>
+											);
+										})}
+									</div>
+								</div>
+							</a>
+						</Link>
 					))}
 				</div>
 			</div>
