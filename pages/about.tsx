@@ -29,10 +29,7 @@ const About = ({ topTracks }: AboutPage) => {
 				<h2 className="mb-4 text-2xl font-bold md:text-3xl">
 					Social Media
 				</h2>
-				<p>
-					Curious what I&apos;m currently jamming to? Here&apos;s my
-					top tracks on Spotify
-				</p>
+				<p>Follow me on social media</p>
 				<div className="grid grid-cols-1 mt-10 gap-x-5 sm:grid-cols-3">
 					<Link href="https://instagram.com/ardhayudhatama">
 						<a className="flex items-center">
