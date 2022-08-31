@@ -86,7 +86,7 @@ const About = ({ topTracks }: AboutPage) => {
 							</div>
 						</a>
 					</Link>
-					<Link href="linkedin.com/in/yudhatamaindra">
+					<Link href="http://linkedin.com/in/yudhatamaindra">
 						<a className="flex items-center">
 							<div className="bg-[#f2f2f2] p-4 rounded-full m-4">
 								<FaLinkedin className="text-2xl text-[#0072b1]" />
