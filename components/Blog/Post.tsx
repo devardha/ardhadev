@@ -8,14 +8,27 @@ interface PostType {
 	description: string;
 	categories: Category[];
 	slug: string;
+	publishedAt: string | null;
 }
 
-const Post = ({ title, image, categories, description, slug }: PostType) => {
+const Post = ({
+	title,
+	image,
+	categories,
+	description,
+	slug,
+	publishedAt,
+}: PostType) => {
 	return (
 		<Link href={`/blogs/${slug}`}>
 			<a className="block w-full mb-2">
 				<div>
 					<div className="relative w-full h-56 mb-3 md:h-48 bg-neutral-200">
+						{!publishedAt && (
+							<div className="absolute top-0 left-0 z-10 px-3 py-1 text-sm text-white uppercase bg-black bg-opacity-50">
+								Preview
+							</div>
+						)}
 						<Image
 							src={image}
 							alt={title}
