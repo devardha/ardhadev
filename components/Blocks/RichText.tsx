@@ -47,7 +47,7 @@ export default function RichText({ content }: any) {
 						return <p>{children}</p>;
 					},
 					h2: ({ children, ...props }) => {
-						const heading: any = children[0] || "";
+						const heading: any = (children && children[0]) || "";
 						const slug = slugify(heading, { lower: true });
 						return (
 							<h2
@@ -59,7 +59,7 @@ export default function RichText({ content }: any) {
 									);
 								}}
 							>
-								{children[0]}
+								{children && children[0]}
 								<div>
 									<FiLink2 className="text-xl text-gray-400 opacity-0 group-hover:opacity-100" />
 								</div>
@@ -207,7 +207,8 @@ export default function RichText({ content }: any) {
                         letter-spacing: -0.5px;
                     }
                     .content img {
-                        border-radius: 0.25rem;
+                        border-radius: 0.5rem;
+						width:100%;
                     }
                     .content a {
                         color: #60a5fa;

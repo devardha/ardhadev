@@ -20,7 +20,7 @@ const Post = ({
 	publishedAt,
 }: Props) => {
 	return (
-		<Link href={`/blogs/${slug}`}>
+		<Link href={`/blog/${slug}`}>
 			<a className="block w-full mb-2">
 				<div>
 					<div className="relative w-full h-56 mb-3 md:h-48 bg-neutral-200">
