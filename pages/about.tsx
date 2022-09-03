@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
 import {
 	FaGithub,
 	FaInstagram,
@@ -9,16 +8,16 @@ import {
 	FaTwitter,
 	FaYoutube,
 } from "react-icons/fa";
-import Header from "../components/Header";
-import Layout from "../components/Layout";
-import { SpotifyTopTrackResponse, TopTrack } from "../types/spotify";
-import { getSpotifyTopTracks } from "../utils/spotify";
+import Header from "@components/Header";
+import Layout from "@components/Layout";
+import { TopTrack } from "@lib/types/spotify";
+import { getSpotifyTopTracks } from "@lib/spotify";
 
-interface AboutPage {
+interface Props {
 	topTracks: TopTrack[];
 }
 
-const About = ({ topTracks }: AboutPage) => {
+const About = ({ topTracks }: Props) => {
 	return (
 		<Layout>
 			<Header

@@ -37,5 +37,6 @@ export interface Article {
 		author: {
 			data: Author;
 		}
-	}
+	};
+	publishedAt: string | null;
 }

@@ -1,6 +1,6 @@
-import Layout from "../components/Layout";
-import Gears from "../components/Gears";
-import Header from "../components/Header";
+import Layout from "@components/Layout";
+import Gears from "@components/Gears";
+import Header from "@components/Header";
 import Image from "next/image";
 
 const About = () => {

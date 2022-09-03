@@ -1,15 +1,15 @@
 import type { NextPage, GetStaticPropsContext } from "next";
-import Hero from "../components/Hero";
-import Layout from "../components/Layout";
-import Posts from "../components/Blog";
+import Hero from "@components/Hero";
+import Layout from "@components/Layout";
+import Posts from "@components/Blog";
 import axios from "axios";
-import { Article } from "../types/article";
+import { Article } from "@lib/types/article";
 
-interface HomePageProps {
+interface Props {
 	articles: Article[];
 }
 
-const Home: NextPage<HomePageProps> = ({ articles }) => {
+const Home: NextPage<Props> = ({ articles }) => {
 	return (
 		<Layout>
 			<Hero />

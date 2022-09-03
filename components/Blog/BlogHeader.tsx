@@ -2,7 +2,7 @@ import { format } from "date-fns";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import readingTime from "reading-time";
-import { Article } from "../../types/article";
+import { Article } from "@lib/types/article";
 
 interface Props {
 	article: Article;

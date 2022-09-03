@@ -1,4 +1,4 @@
-import { Article } from "../../types/article";
+import { Article } from "@lib/types/article";
 import Post from "./Post";
 
 interface Props {

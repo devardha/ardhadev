@@ -1,6 +1,6 @@
 import axios from 'axios';
 import querystring from 'querystring';
-import { SpotifyTopTrackResponse } from '../types/spotify';
+import { SpotifyTopTrackResponse } from './types/spotify';
 
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks?limit=18`;

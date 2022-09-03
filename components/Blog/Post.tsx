@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Category } from "../../types/article";
+import { Category } from "@lib/types/article";
 
-interface PostType {
+interface Props {
 	title: string;
 	image: string;
 	description: string;
@@ -18,7 +18,7 @@ const Post = ({
 	description,
 	slug,
 	publishedAt,
-}: PostType) => {
+}: Props) => {
 	return (
 		<Link href={`/blogs/${slug}`}>
 			<a className="block w-full mb-2">

@@ -1,11 +1,5 @@
+import { GearType } from "@lib/types/gear";
 import Image from "next/image";
-
-interface GearType {
-	title: string;
-	image: string;
-	links: any[];
-	brand: string;
-}
 
 const Gear = ({ title, image, links, brand }: GearType) => {
 	return (

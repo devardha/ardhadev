@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { FiLink2 } from "react-icons/fi";
-import styles from "../../lib/prism/styles";
+import { styles } from "@lib/prism";
 import slugify from "slugify";
 
 export default function RichText({ content }: any) {

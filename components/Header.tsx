@@ -1,12 +1,12 @@
 import ReactMarkdown from "react-markdown";
 import RichText from "./Blocks/RichText";
 
-interface HeaderProps {
+interface Props {
 	title: string;
 	description: string;
 }
 
-const Header = ({ title, description }: HeaderProps) => {
+const Header = ({ title, description }: Props) => {
 	return (
 		<div className="w-full">
 			<div className="container max-w-5xl px-6 mx-auto md:px-0">

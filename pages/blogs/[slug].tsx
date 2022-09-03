@@ -1,18 +1,18 @@
 import type { NextPage, GetStaticPropsContext } from "next";
-import Layout from "../../components/Layout";
+import Layout from "@components/Layout";
 import axios from "axios";
-import { Article } from "../../types/article";
-import Blocks from "../../components/Blocks";
-import BlogHeader from "../../components/Blog/BlogHeader";
-import ProgressBar from "../../components/ProgressBar";
+import { Article } from "@lib/types/article";
+import Blocks from "@components/Blocks";
+import BlogHeader from "@components/Blog/BlogHeader";
+import ProgressBar from "@components/ProgressBar";
 import { MutableRefObject, useRef, useState } from "react";
 import useSWR from "swr";
 
-interface HomePageProps {
+interface Props {
 	article: Article;
 }
 
-const BlogPage: NextPage<HomePageProps> = ({ article }) => {
+const BlogPage: NextPage<Props> = ({ article }) => {
 	const ref: MutableRefObject<null> | any = useRef();
 
 	const [email, setEmail] = useState("");
