@@ -47,6 +47,10 @@ const data = [
 		path: "/",
 	},
 	{
+		label: "Blog",
+		path: "/blog",
+	},
+	{
 		label: "Works",
 		path: "https://github.com/devardha",
 	},

@@ -4,15 +4,6 @@ const nextConfig = {
 	images: {
 		domains: ["ardhadev.s3.ap-southeast-1.amazonaws.com", "i.scdn.co"],
 	},
-	async redirects() {
-		return [
-			{
-				source: "/blog",
-				destination: "/",
-				permanent: true,
-			},
-		];
-	},
 };
 
 module.exports = nextConfig;

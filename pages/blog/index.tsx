@@ -4,6 +4,7 @@ import Layout from "@components/Layout";
 import Posts from "@components/Blog";
 import axios from "axios";
 import { Article } from "@lib/types/article";
+import PostList from "@components/Blog/PostList";
 
 interface Props {
 	articles: Article[];
@@ -12,8 +13,7 @@ interface Props {
 const Home: NextPage<Props> = ({ articles }) => {
 	return (
 		<Layout>
-			<Hero />
-			<Posts articles={articles} />
+			<PostList articles={articles} />
 		</Layout>
 	);
 };
