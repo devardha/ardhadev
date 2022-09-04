@@ -3,6 +3,7 @@ import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import readingTime from "reading-time";
 import { Article } from "@lib/types/article";
+import { FiBookmark, FiShare2 } from "react-icons/fi";
 
 interface Props {
 	article: Article;
@@ -18,35 +19,47 @@ const BlogHeader = ({ article }: Props) => {
 				<p className="text-lg text-gray-400 md:text-xl">
 					{article.attributes.description}
 				</p>
-				<div className="flex items-center mt-10">
-					<div className="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full lg:w-10 lg:h-10">
-						<Image
-							objectFit="cover"
-							sizes="100%"
-							layout="fill"
-							src={
-								article.attributes.author.data.attributes.image
-									.data.attributes.formats.thumbnail.url
-							}
-							alt="author"
-							loading="lazy"
-						/>
+				<div className="flex items-center justify-between mt-10">
+					<div className="flex items-center">
+						<div className="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full lg:w-10 lg:h-10">
+							<Image
+								objectFit="cover"
+								sizes="100%"
+								layout="fill"
+								src={
+									article.attributes.author.data.attributes
+										.image.data.attributes.formats.thumbnail
+										.url
+								}
+								alt="author"
+								loading="lazy"
+							/>
+						</div>
+						<div className="flex flex-col ml-4 text-xs uppercase lg:text-sm">
+							<a href="#" className="font-medium">
+								Ardha Yudhatama
+							</a>
+							<span className="mt-1 text-gray-500">
+								{format(
+									new Date(article.attributes.publishedAt),
+									"dd MMMM yyy"
+								)}{" "}
+								•{" "}
+								{
+									readingTime(
+										article.attributes.blocks[0].body
+									).text
+								}
+							</span>
+						</div>
 					</div>
-					<div className="flex flex-col ml-4 text-xs uppercase lg:text-sm">
-						<a href="#" className="font-medium">
-							Ardha Yudhatama
-						</a>
-						<span className="mt-1 text-gray-500">
-							{format(
-								new Date(article.attributes.publishedAt),
-								"dd MMMM yyy"
-							)}{" "}
-							•{" "}
-							{
-								readingTime(article.attributes.blocks[0].body)
-									.text
-							}
-						</span>
+					<div className="flex items-center text-gray-500">
+						<div className="flex items-center justify-center w-8 h-8 mr-2 rounded-full cursor-pointer hover:bg-gray-100">
+							<FiShare2 className="text-xl" />
+						</div>
+						<div className="flex items-center justify-center w-8 h-8 rounded-full cursor-pointer hover:bg-gray-100">
+							<FiBookmark className="text-xl" />
+						</div>
 					</div>
 				</div>
 			</div>

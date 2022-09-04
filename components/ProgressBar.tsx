@@ -25,7 +25,8 @@ function ProgressBar({ element }: Props) {
 	useEffect(() => {
 		if (element) {
 			setHeight(
-				element.current.clientHeight - (element.current.offsetTop + 400)
+				element.current.clientHeight -
+					(element.current.offsetTop + 1000)
 			);
 		}
 	}, [setHeight, element, scrollPosition]);

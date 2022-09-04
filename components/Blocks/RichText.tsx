@@ -3,6 +3,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { FiLink2 } from "react-icons/fi";
 import { styles } from "@lib/prism";
 import slugify from "slugify";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function RichText({ content }: any) {
 	return (
@@ -57,6 +58,7 @@ export default function RichText({ content }: any) {
 									navigator.clipboard.writeText(
 										`${window.location.href}#${slug}`
 									);
+									toast("Copied to clipboard!", {});
 								}}
 							>
 								{children && children[0]}
@@ -103,6 +105,10 @@ export default function RichText({ content }: any) {
 															children
 														).replace(/\n$/, "")
 													);
+													toast(
+														"Copied to clipboard!",
+														{}
+													);
 												}}
 											>
 												Copy
@@ -130,6 +136,12 @@ export default function RichText({ content }: any) {
 			>
 				{content}
 			</ReactMarkdown>
+			<ToastContainer
+				position="bottom-right"
+				hideProgressBar
+				theme="dark"
+				autoClose={2000}
+			/>
 			<style
 				dangerouslySetInnerHTML={{
 					__html: `
@@ -173,7 +185,7 @@ export default function RichText({ content }: any) {
                         margin-bottom: 22px;
                         line-height: 1.7;
                     }
-                    .content p code {
+                    .content p code, .content li code {
                         font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
                         border-radius: 3px;
                         line-height: 22px;

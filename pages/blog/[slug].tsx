@@ -33,8 +33,6 @@ const BlogPage: NextPage<Props> = ({ article }) => {
 			.catch((err) => console.log(err));
 	};
 
-	console.log(data && data.data);
-
 	return (
 		<Layout title={article.attributes.title}>
 			<ProgressBar element={ref} />
@@ -49,8 +47,8 @@ const BlogPage: NextPage<Props> = ({ article }) => {
 							Subscribe to the newsletter
 						</h3>
 						<p className="mb-4">
-							Get emails from me about web development, tech, and
-							early access to new articles
+							Get latest article delivered right trough your
+							inbox.
 						</p>
 						<div className="relative flex items-center mt-5">
 							<input
