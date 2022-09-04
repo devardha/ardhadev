@@ -3,7 +3,7 @@ import Layout from "@components/Layout";
 import axios from "axios";
 import { Article } from "@lib/types/article";
 import Blocks from "@components/Blocks";
-import BlogHeader from "@components/Blog/BlogHeader";
+import BlogHeader from "@components/Article/BlogHeader";
 import ProgressBar from "@components/ProgressBar";
 import { MutableRefObject, useRef, useState } from "react";
 import useSWR from "swr";

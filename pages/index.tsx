@@ -1,7 +1,7 @@
 import type { NextPage, GetStaticPropsContext } from "next";
 import Hero from "@components/Hero";
 import Layout from "@components/Layout";
-import Posts from "@components/Blog";
+import Posts from "@components/Article/ArticleGrid";
 import axios from "axios";
 import { Article } from "@lib/types/article";
 

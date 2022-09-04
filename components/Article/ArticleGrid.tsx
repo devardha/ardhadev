@@ -24,6 +24,7 @@ const Posts = ({ articles }: Props) => {
 							description={item.attributes.description}
 							slug={item.attributes.slug}
 							publishedAt={item.attributes.publishedAt}
+							author={item.attributes.author.data}
 						/>
 					))}
 				</div>
