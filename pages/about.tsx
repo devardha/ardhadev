@@ -55,7 +55,7 @@ const About = ({ topTracks }: Props) => {
 							</div>
 							<div>
 								<div className="font-bold">Twitter</div>
-								<div>adydhtm</div>
+								<div>ardhaydhtm</div>
 							</div>
 						</a>
 					</Link>
