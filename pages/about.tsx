@@ -12,6 +12,7 @@ import Header from "@components/Header";
 import Layout from "@components/Layout";
 import { TopTrack } from "@lib/types/spotify";
 import { getSpotifyTopTracks } from "@lib/spotify";
+import RichText from "@components/Blocks/RichText";
 
 interface Props {
 	topTracks: TopTrack[];
@@ -22,8 +23,14 @@ const About = ({ topTracks }: Props) => {
 		<Layout>
 			<Header
 				title="About"
-				description="Hey, I’m Ardha 👋. I'm a developer from Indonesia. I work at [Viska Vef](https://www.linkedin.com/company/viskavef/) as a Full Stack Web Developer. I usually work with React and Node.js. And yes, I love Typescript so much! Typescript has become my third language after Indonesian and English. I'm also interested in learning other programming languages such as Python and Go."
+				description="Hey, I’m Ardha 👋. I'm a developer from Indonesia. I work at [Viska Vef](https://www.linkedin.com/company/viskavef/) as a Full Stack Web Developer. I usually work with React, Next.js, and Node.js. And yes, I love Typescript so much! Typescript has become my third language after Indonesian and English. I'm also interested in learning other programming languages such as Python and Go."
 			/>
+			<div className="container max-w-5xl px-6 mx-auto md:px-0">
+				<RichText
+					content="Want to discuss a project? Just contact me via email
+				[ardhaydhtm@gmail.com](mailto:ardhaydhtm@gmail.com)"
+				/>
+			</div>
 			<div className="container max-w-5xl px-6 mx-auto mt-20 md:px-0">
 				<h2 className="mb-4 text-2xl font-bold md:text-3xl">
 					Social Media

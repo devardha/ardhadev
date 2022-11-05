@@ -20,9 +20,7 @@ const Home: NextPage<Props> = ({ articles }) => {
 
 export async function getStaticProps(context: GetStaticPropsContext) {
 	const endpoint =
-		process.env.NODE_ENV === "development"
-			? "/api/articles?populate=cover,author,author.image,categories&sort[0]=publishedAt%3Adesc&publicationState=preview"
-			: "/api/articles?populate=cover,author,author.image,categories&sort[0]=publishedAt%3Adesc";
+		"/api/articles?populate=cover,author,author.image,categories&sort[0]=publishedAt%3Adesc";
 	const { data } = await axios.get(process.env.STRAPI_BASE_URL + endpoint);
 
 	return {
